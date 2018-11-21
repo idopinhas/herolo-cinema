@@ -1,0 +1,26 @@
+<div class="container">
+  <section id="page-title">
+    <div class="row">
+      <div class="col-12 mt-5">
+        <div class="jumbotron p-3">
+          <h1 class="display-4 sm-herolo-title"><i class="fas fa-film"></i> Movies List</h1>
+          <p class="lead sm-herolo-subtitle">
+            <b>Herolo</b> - Cinema Always do better than others
+            <span class="float-right float-xs-none">
+              <a (click)="onClickMovieAdd($event)" href="#" class="card-link btn btn-herolo-purple btn-sm"><i class="fas fa-plus-circle"></i>
+                Add New Movie</a>
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="movies-content">
+    <div class="row">
+      <div *ngFor="let movie of movies" class="col-md-4 mb-5">
+        <app-movie [movie]="movie" (deleteClick)="deleteMovieFromParent($event)" (editClick)="showMovieFromParent($event)"></app-movie>
+      </div>
+    </div>
+  </section>
+</div>

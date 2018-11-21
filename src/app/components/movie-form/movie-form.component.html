@@ -1,0 +1,56 @@
+<form #movieForm="ngForm" (ngSubmit)="onSubmit(movieForm)" action="" method="POST" autocomplete="off" novalidate="novalidate">
+  <div class="jumbotron p-3">
+    <h4><i class="fa fa-edit"></i> Movie Form</h4>
+  </div>
+  <input type="hidden" name="id" id="idT" [(ngModel)]="data.movie.id">
+  <input type="hidden" name="Poster" id="id" [(ngModel)]="data.movie.Poster">
+
+  <div class="form-group">
+    <label for="title">Movie Title:</label>
+    <input [ngClass]="{'is-invalid':title.errors && title.touched}" #title="ngModel" class="form-control" type="text"
+      name="Title" id="title" [(ngModel)]="data.movie.Title" required>
+    <div *ngIf="!titleExist" [hidden]="!title.errors?.required" class="invalid-feedback">
+      Movie Title is required
+    </div>
+    <span *ngIf="titleExist" class="text-danger">* Movie Title is taken!</span>
+  </div>
+  <div class="form-group">
+    <label for="year">Year:</label>
+    <input [ngClass]="{'is-invalid':year.errors && year.touched}" #year="ngModel" class="form-control" type="text" name="Year"
+      id="year" [(ngModel)]="data.movie.Year" required pattern="^\d{4}$">
+    <div [hidden]="!year.errors?.required" class="invalid-feedback">
+      Year is required
+    </div>
+    <div [hidden]="!year.errors?.pattern" class="invalid-feedback">
+      Please enter a valid year number
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="run-time">Runtime:</label>
+    <input [ngClass]="{'is-invalid':Runtime.errors && Runtime.touched}" #Runtime="ngModel" class="form-control" type="text"
+      name="Runtime" id="run-time" [(ngModel)]="data.movie.Runtime" required>
+    <div [hidden]="!Runtime.errors?.required" class="invalid-feedback">
+      Runtime is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="genre">Genre:</label>
+    <input [ngClass]="{'is-invalid':genre.errors && genre.touched}" #genre="ngModel" class="form-control" type="text"
+      name="Genre" id="genre" [(ngModel)]="data.movie.Genre" required>
+    <div [hidden]="!genre.errors?.required" class="invalid-feedback">
+      Genre is required
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="director">Director:</label>
+    <input [ngClass]="{'is-invalid':director.errors && director.touched}" #director="ngModel" class="form-control" type="text"
+      name="Director" id="director" [(ngModel)]="data.movie.Director" required>
+    <div [hidden]="!director.errors?.required" class="invalid-feedback">
+      Director is required
+    </div>
+  </div>
+  <div class="form-group text-center">
+    <input (click)="onNoClick()" type="button" value="Cancel" class="btn btn-secondary mt-2">
+    <input [disabled]="!movieForm.form.valid" class="btn btn-herolo-purple ml-3 mt-2" type="submit" value="Save">
+  </div>
+</form>

@@ -1,0 +1,22 @@
+<div class="card card-shadow">
+  <div class="card-body bg-dark text-white">
+    <h5 class="card-title">
+      <i class="far fa-star"></i>
+      {{ movie.Title | clearTitle }} ({{ movie.Year }})
+    </h5>
+    <p class="card-text">{{ movie.Runtime }}</p>
+  </div>
+  <div class="bullet-wrapper">
+  <img class="card-img-top img-thumbnail gallery-bullet-height grow" src="{{ movie.Poster }}" alt="Card image cap">
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item text-md-small"><b>Director:</b> {{ movie.Director }}</li>
+    <li class="list-group-item text-md-small"><b>Genre:</b> {{ movie.Genre }}</li>
+  </ul>
+  <div class="card-body text-center">
+    <a (click)="onClickMovieEdit(movie.id, $event)" href="#" class="card-link btn btn-herolo-purple btn-sm"><i class="fas fa-edit"></i>
+      Edit</a>
+    <a (click)="onClickDeleteMovie(movie.id, $event)" href="#" class="ml-2 card-link btn btn-danger btn-sm"><i class="fas fa-trash-alt"></i>
+      Delete</a>
+  </div>
+</div>

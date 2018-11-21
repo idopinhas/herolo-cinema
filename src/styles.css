@@ -1,0 +1,21 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+
+.text-herolo-purple {
+  color: #7941a4 !important;
+}
+.bg-herolo-purple {
+  background-color: #7941a4 !important;
+}
+.height-40 {
+  height: 40px;
+  line-height: 40px;
+}
+.btn-herolo-purple {
+  color: #fff;
+  background-color: #7941a4;
+  border-color: #7941a4;
+}
+.btn-herolo-purple:hover {
+  color: #c3a4db !important;
+}

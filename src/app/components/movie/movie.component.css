@@ -1,0 +1,40 @@
+.gallery-bullet-height {
+  height:510px;
+  padding: 0;
+}
+
+.grow {
+  transition: all .3s ease-in-out;
+}
+.grow:hover {
+  transform: scale(1.1);
+}
+
+.bullet-wrapper {
+  overflow: hidden;
+}
+
+.card-shadow {
+  box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/*Responsive*/
+
+@media screen and (max-width:768px) {
+  .gallery-bullet-height {
+    height:320px;
+  }
+  .card-title {
+    font-size:0.85rem;
+  }
+
+  .text-md-small {
+    font-size:0.6rem;
+  }
+}
+
+@media screen and (max-width:480px) {
+  .text-md-small {
+    font-size:0.7rem;
+  }
+}
